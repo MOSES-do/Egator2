@@ -1,0 +1,90 @@
+@mixin button($textColor: $white-color, $backgroundColor: $secondary-color) {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    background: $backgroundColor;
+    color: $textColor;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+
+
+@mixin gradientBackground {
+    background: linear-gradient(135deg, $primary-color, $primary-color-variant);
+    color: $white-color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: $white-color;
+    }
+}
+
+@mixin windowScrollBg {
+    background: $white-color;
+
+    h3,
+    .nav__item {
+        color: $black-color;
+        font-weight: 600;
+    }
+
+}
+
+
+/*
+$breakpoint argument choices:
+- Phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+ */
+
+
+
+@mixin query($breakpoint) {
+
+    /*
+    em is used becos of useragent font-size adaptability
+    1em = 16px
+    */
+    @if $breakpoint ==phone {
+
+        //600px
+        //600px/16px 
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+
+    @if $breakpoint ==tab-port {
+
+        //900px
+        @media only screen and (max-width:56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-land {
+
+        //>= 900 <= 1200px
+        @media only screen and (max-width:75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==big-desktop {
+
+        //1800px
+        @media only screen and (min-width:112.5em) {
+            @content;
+        }
+    }
+}

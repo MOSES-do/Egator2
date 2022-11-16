@@ -1,0 +1,73 @@
+header {
+    @include gradientBackground;
+    height: 100vh;
+    overflow: hidden;
+
+
+
+    @media only screen and (min-height:25em) {
+        height: 100%;
+        padding-bottom: 6rem;
+    }
+
+
+    /*
+    works too but too tachy
+    @media only screen and (max-height: 950px) {
+        height: 110rem;
+        padding-bottom: 5rem;
+    }
+
+    @media only screen and (min-height:951px) {
+        height: 70rem;
+        padding-bottom: 5rem;
+    }
+
+    @media only screen and (min-height: 1280px) {
+        height: 80rem;
+    }
+    */
+
+
+    .container-body {
+        padding-top: 15rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-row-gap: 6rem;
+        align-items: center;
+        justify-content: space-between;
+
+        @include query(phone) {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .header__content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-self: left;
+            padding-right: 6rem;
+
+            @media only screen and (max-width:49.8125em) {
+                width: 50vw;
+            }
+
+            @include query(phone) {
+                width: 100%;
+                align-items: center;
+                padding-right: 0;
+            }
+        }
+
+        p {
+            margin: 1rem 0 2rem;
+            color: $light-color;
+        }
+
+        a {
+            color: $white-color;
+            margin-top: -2rem;
+        }
+    }
+}

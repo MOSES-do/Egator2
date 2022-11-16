@@ -1,0 +1,84 @@
+#appointment {
+    .container-body {
+        display: grid;
+        grid-template-columns: 47% 47%;
+        gap: 6%;
+
+        @include query(phone) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .info {
+
+            & h2,
+            p {
+                @include query(tab-port) {
+                    text-align: center;
+                }
+            }
+
+            p {
+                margin: 2rem 0 4rem 0;
+                font-size: 1.5rem;
+            }
+
+            article {
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+
+                small {
+                    margin-top: 1rem;
+                    display: block;
+                    line-height: 2;
+                    margin-bottom: 2rem;
+
+                }
+
+                .info__icon {
+                    background: $secondary-color;
+                    color: $white-color;
+                    align-self: flex-start;
+                    border-radius: 50%;
+                    padding: .8rem;
+                    display: flex;
+                    height: fit-content;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+
+            .form__group {
+                label {
+                    font-size: 1rem;
+                    display: inline-block;
+                    font-weight: 600;
+                }
+
+                input,
+                textarea,
+                select {
+                    background: rgba(240, 213, 213, 0.234);
+                    padding: 1rem 1.3rem;
+                    display: block;
+                    width: 100%;
+                    border-radius: 0.6rem;
+                    resize: none;
+                    appearance: none;
+                }
+            }
+        }
+    }
+
+    .btn-primary {
+        color: $white-color;
+        font-size: 1.3rem;
+
+    }
+}

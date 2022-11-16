@@ -1,0 +1,111 @@
+body {
+    font-family: 'Montserrat';
+    color: $dark-color;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: $dark-color;
+    background: rgba($primary-color-variant, 0.1);
+    user-select: none;
+}
+
+i {
+    font-size: 2.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    letter-spacing: -3px;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+
+h3 {
+    font-size: 2.2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+small {
+    font-size: 1.4rem;
+}
+
+
+
+p {
+    font-size: 1.8rem;
+    line-height: $paragraph-line-height;
+}
+
+section {
+    margin-top: 12rem;
+
+    &>h2 {
+        //direct h2 inside the section
+        text-align: center;
+    }
+
+    &>p {
+        text-align: center;
+        width: 42%;
+        margin: 0.6rem auto 2.5rem;
+    }
+
+    @media only screen and(min-width:2030px) {
+        & h2 {
+            font-size: 5.2rem;
+        }
+
+        & h4 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 2rem;
+            width: 100%;
+        }
+
+        & small {
+            font-size: 1.9rem;
+        }
+
+        & i {
+            font-size: 3.5rem;
+            margin-top: -0.5rem;
+        }
+    }
+
+
+}
+
+a:link,
+a:visited {
+    font-size: 1.2rem;
+
+    @include query(tab-port) {
+        font-size: 1.5rem;
+    }
+}

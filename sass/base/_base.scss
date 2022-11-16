@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: inherit;
+}
+
+
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* 1rem = 10pixels */
+
+    @include query(tab-land) {
+        // width >= 900 <= 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+    }
+
+    //>=600px & >=900px same font-size applies
+    @include query(tab-port) {
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+    @include query(big-desktop) {
+        font-size: 85%; //1 rem = 12px, 12/16 = 75%
+    }
+}
+
+
+body {
+    box-sizing: border-box;
+}
+
+
+
+::selection {
+    background-color: $primary-color;
+    color: $white-color;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background: $primary-color-variant;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: $primary-color;
+    border-radius: 0.25rem;
+}

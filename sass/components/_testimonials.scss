@@ -1,0 +1,52 @@
+.swiper {
+    width: 90vw;
+
+    p {
+        width: 90%;
+    }
+
+
+    .swiper-wrapper {
+        margin-top: 5rem;
+        padding-bottom: 5rem;
+
+
+        .swiper-slide {
+            @include gradientBackground;
+            border-radius: 1rem;
+            cursor: default;
+            padding: 3rem .1px;
+
+            p {
+                margin-bottom: 2rem;
+                font-size: 1.4rem;
+                margin-left: 1.3rem;
+            }
+
+            .patient {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-left: 1.3rem;
+
+                .avatar {
+                    width: 4.5rem;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+.swiper-pagination-bullet {
+    background: $primary-color;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: rgba(#480ca8, 0.4);
+
+    margin-top: 1rem;
+}

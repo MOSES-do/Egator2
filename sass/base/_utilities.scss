@@ -1,0 +1,47 @@
+.container {
+    width: $container-lg;
+    margin: 0 auto;
+
+    // @include query(tablet) {
+    //     width: $container-md;
+    // }
+}
+
+.container-body {
+    max-width: $container-body;
+    margin: 0 auto;
+    padding: 0 4rem;
+
+    @include query(big-desktop) {
+        max-width: 90%;
+    }
+
+}
+
+
+
+
+
+
+.li-push {
+
+    &:hover {
+        box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
+        transform: translateY(-.05rem);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    @include query(tablet) {
+        &:hover {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
